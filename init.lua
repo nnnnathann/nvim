@@ -50,6 +50,9 @@ vim.opt.smartcase = true
 -- Keep signcolumn on by default
 vim.opt.signcolumn = 'yes'
 
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+
 -- Decrease update time
 vim.opt.updatetime = 250
 
@@ -582,7 +585,8 @@ require('lazy').setup({
         --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
         ts_ls = {},
-        --
+        ocamllsp = {},
+        rescriptls = {},
 
         lua_ls = {
           -- cmd = { ... },
@@ -674,9 +678,8 @@ require('lazy').setup({
         -- python = { "isort", "black" },
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
-        javascript = { 'prettierd', 'prettier', stop_after_first = true },
         go = { 'gofmt' },
-        html = { 'prettierd', 'prettier', stop_after_first = true },
+        ['_'] = { 'prettierd', 'prettier' },
       },
     },
   },
@@ -1017,6 +1020,7 @@ require('lazy').setup({
       hl(0, 'MultiCursorDisabledSign', { link = 'SignColumn' })
     end,
   },
+  { 'rescript-lang/vim-rescript' },
   {
     'nvim-tree/nvim-tree.lua',
     config = function()
