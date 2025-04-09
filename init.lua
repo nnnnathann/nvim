@@ -1037,12 +1037,18 @@ require('lazy').setup({
         vim.keymap.set('n', '<C-n>', ':NvimTreeToggle<CR>', { silent = true })
       end
       require('nvim-tree').setup {
+        view = {
+          side = 'right',
+        },
         filters = {
           dotfiles = false,
         },
         on_attach = my_on_attach,
       }
     end,
+  },
+  {
+    'github/copilot.vim',
   },
 
   -- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
