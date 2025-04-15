@@ -575,6 +575,13 @@ require('lazy').setup({
         pyright = {},
         rust_analyzer = {},
         zls = {},
+        sqls = {
+          on_attach = function(client, bufnr)
+            client.server_capabilities.document_formatting = false
+            client.server_capabilities.document_range_formatting = false
+            require('sqls').on_attach(client, bufnr)
+          end,
+        },
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
@@ -1049,6 +1056,9 @@ require('lazy').setup({
   },
   {
     'github/copilot.vim',
+  },
+  {
+    'nanotee/sqls.nvim',
   },
 
   -- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
