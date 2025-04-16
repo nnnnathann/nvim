@@ -72,6 +72,9 @@ vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = 'split'
 
+-- show command line only when in command mode
+vim.opt.cmdheight = 0
+
 -- Show which line your cursor is on
 vim.opt.cursorline = true
 
