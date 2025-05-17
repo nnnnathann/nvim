@@ -1,6 +1,38 @@
+vim.g.haskell_tools = {
+  ---@type haskell-tools.tools.Opts
+  tools = {
+    -- ...
+  },
+  ---@type haskell-tools.lsp.ClientOpts
+  ---You can also configure these via `:h vim.lsp.config`,
+  --- with the "haskell-tools" key.
+  hls = {
+    ---@param client number The LSP client ID.
+    ---@param bufnr number The buffer number
+    ---@param ht HaskellTools = require('haskell-tools')
+    on_attach = function(client, bufnr, ht)
+      -- Set keybindings, etc. here.
+    end,
+    settings = {
+      haskell = {
+        plugin = {
+          eval = {
+            globalOn = false,
+          },
+        },
+      },
+    },
+    -- ...
+  },
+  ---@type haskell-tools.dap.Opts
+  dap = {
+    -- ...
+  },
+}
+
 return {
   'mrcjkb/haskell-tools.nvim',
-  version = '^5',
+  version = '^6',
   lazy = false,
   setup = {
     hls = {

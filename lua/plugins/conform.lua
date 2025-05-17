@@ -38,7 +38,20 @@ return { -- Autoformat
       -- You can use 'stop_after_first' to run the first available formatter from the list
       go = { 'gofmt' },
       haskell = { 'ormolu' },
+      ocaml = { 'ocamlformat' },
       ['_'] = { 'prettierd', 'prettier' },
+    },
+    formatters = {
+      ocamlformat = {
+        prepend_args = {
+          '--if-then-else',
+          'vertical',
+          '--break-cases',
+          'fit-or-vertical',
+          '--type-decl',
+          'sparse',
+        },
+      },
     },
   },
 }

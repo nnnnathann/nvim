@@ -25,7 +25,7 @@ return {
       keymaps = {
         send_motion = '<space>sc',
         visual_send = '<space>sc',
-        send_file = '<space>sf',
+        send_file = '<space>rf',
         send_line = '<space>sl',
         send_mark = '<space>sm',
         mark_motion = '<space>mc',

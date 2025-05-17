@@ -7,6 +7,7 @@ return {
     { 'williamboman/mason.nvim', opts = {} },
     'williamboman/mason-lspconfig.nvim',
     'WhoIsSethDaniel/mason-tool-installer.nvim',
+    'ranjithshegde/ccls.nvim',
 
     -- Useful status updates for LSP.
     { 'j-hui/fidget.nvim', opts = {} },
@@ -142,7 +143,6 @@ return {
       -- But for many setups, the LSP (`ts_ls`) will work just fine
       ts_ls = {},
       ocamllsp = {},
-      rescriptls = {},
 
       lua_ls = {
         -- cmd = { ... },
@@ -160,6 +160,8 @@ return {
       },
 
       tailwindcss = {},
+
+      clangd = {},
     }
 
     -- Ensure the servers and tools above are installed
@@ -193,5 +195,8 @@ return {
         end,
       },
     }
+    vim.lsp.enable 'roc_ls'
+    vim.lsp.enable 'unison'
+    require('ccls').setup { lsp = { use_defaults = true } }
   end,
 }
