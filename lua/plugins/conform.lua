@@ -39,6 +39,7 @@ return { -- Autoformat
       go = { 'gofmt' },
       haskell = { 'ormolu' },
       ocaml = { 'ocamlformat' },
+      elm = { 'elm-format' },
       ['_'] = { 'prettierd', 'prettier' },
     },
     formatters = {

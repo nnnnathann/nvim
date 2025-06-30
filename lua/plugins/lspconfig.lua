@@ -159,9 +159,26 @@ return {
         },
       },
 
-      tailwindcss = {},
+      tailwindcss = {
+        filetypes = { 'elm' },
+        settings = {
+          includeLanguages = {
+            elm = 'javascriptreact',
+          },
+        },
+      },
 
       clangd = {},
+
+      elmls = {},
+
+      purescriptls = {
+        settings = {
+          purescript = {
+            formatter = 'purs-tidy',
+          },
+        },
+      },
     }
 
     -- Ensure the servers and tools above are installed
