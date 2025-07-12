@@ -40,6 +40,7 @@ return { -- Autoformat
       haskell = { 'ormolu' },
       ocaml = { 'ocamlformat' },
       elm = { 'elm-format' },
+      swift = { 'swift_format' },
       ['_'] = { 'prettierd', 'prettier' },
     },
     formatters = {

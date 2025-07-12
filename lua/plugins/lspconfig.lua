@@ -215,5 +215,15 @@ return {
     vim.lsp.enable 'roc_ls'
     vim.lsp.enable 'unison'
     require('ccls').setup { lsp = { use_defaults = true } }
+    require('lspconfig').sourcekit.setup {
+      -- capabilities = capabilities,
+      capabilities = {
+        workspace = {
+          didChangeWatchedFiles = {
+            dynamicRegistration = true,
+          },
+        },
+      },
+    }
   end,
 }
